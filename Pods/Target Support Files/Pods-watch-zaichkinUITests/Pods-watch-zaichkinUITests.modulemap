@@ -1,0 +1,6 @@
+framework module Pods_watch_zaichkinUITests {
+  umbrella header "Pods-watch-zaichkinUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

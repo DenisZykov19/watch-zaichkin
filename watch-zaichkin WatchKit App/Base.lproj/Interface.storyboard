@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14256" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14243"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14219"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watch_zaichkin_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="71" height="21" alignment="left" text="Москва" id="cle-gu-T1A"/>
+                        <imageView width="42" height="41" alignment="right" id="4z5-rU-oT0"/>
+                        <label width="58" height="32" alignment="center" verticalAlignment="center" text="0℃" textAlignment="center" id="tTc-bO-0AV"/>
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="Подробнее" id="7le-Yw-v46">
+                            <connections>
+                                <segue destination="IeG-oP-M57" kind="push" id="MTG-KH-cQj"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="CityName" destination="cle-gu-T1A" id="7bB-Wb-01D"/>
+                        <outlet property="TempLabel" destination="tTc-bO-0AV" id="4ul-qP-1JH"/>
+                        <outlet property="WeatherImage" destination="4z5-rU-oT0" id="0V6-RS-vEU"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
@@ -32,16 +52,33 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="watch_zaichkin_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="watch_zaichkin_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+        <!--Min Max View Controller-->
+        <scene sceneID="dfv-DY-NSc">
+            <objects>
+                <controller id="IeG-oP-M57" customClass="MinMaxViewController" customModule="watch_zaichkin_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Температура" id="9F9-ZY-Ksr"/>
+                        <label alignment="center" text="Min:" id="xHU-Se-gMc"/>
+                        <label alignment="center" text="Max:" id="Ykh-6k-Ps8"/>
+                    </items>
+                    <connections>
+                        <outlet property="Max" destination="Ykh-6k-Ps8" id="zEh-MF-yTW"/>
+                        <outlet property="Min" destination="xHU-Se-gMc" id="6Sc-Vx-LDH"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="69"/>
         </scene>
     </scenes>
 </document>

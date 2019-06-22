@@ -1,0 +1,6 @@
+framework module Pods_watch_zaichkin_WatchKit_Extension {
+  umbrella header "Pods-watch-zaichkin WatchKit Extension-umbrella.h"
+
+  export *
+  module * { export * }
+}
